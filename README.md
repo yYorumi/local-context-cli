@@ -25,26 +25,26 @@ The Solution: The Wrapper Approach
 
 The AI lives in a "clean sandbox," believing it talks directly to the user. Meanwhile, our utility acts as a silent proxy, capturing telemetry, updating your local **Obsidian Vault**, and seamlessly injecting highly compressed, lightweight context into the session.
 
-[User Input: "opencode", etc.]
-       │
-       ▼
-┌────────────────────────────────────────────────────────┐
-│ 1. Local-Context-CLI Environment (The Wrapper)         │
-│                                                        │
-│  • Reads latest compressed MD user profile from Vault. │
-│  • Spawns an isolated Network Namespace / VPN Tunnel.  │
-└────────────────────────────────────────────────────────┘
-       │
-       ▼
-┌────────────────────────────────────────────────────────┐
-│ 2. Isolated AI Agent Sandbox (Any CLI Agent)           │
-│                                                        │
-│  • Receives micro-injected context (saves ~95% tokens) │
-│  • Thinks it communicates directly with the user.      │
-└────────────────────────────────────────────────────────┘
-       │
-       ▼
-[Silent Telemetry Parsing] ──> Updates `.md` stats in Obsidian.
+   [User Input: "opencode", etc.]
+               │
+               ▼
+ ┌────────────────────────────────────────────────────────┐
+ │ 1. Local-Context-CLI Environment (The Wrapper)         │
+ │                                                        │
+ │  • Reads latest compressed MD user profile from Vault. │
+ │  • Spawns an isolated Network Namespace / VPN Tunnel.  │
+ └────────────────────────────────────────────────────────┘
+        │
+        ▼
+ ┌────────────────────────────────────────────────────────┐
+ │ 2. Isolated AI Agent Sandbox (Any CLI Agent)           │
+ │                                                        │
+ │  • Receives micro-injected context (saves ~95% tokens) │
+ │  • Thinks it communicates directly with the user.      │
+ └────────────────────────────────────────────────────────┘
+        │
+        ▼
+ [Silent Telemetry Parsing] ──> Updates `.md` stats in Obsidian.
 
 Key Features
 
