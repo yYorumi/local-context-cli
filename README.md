@@ -62,7 +62,7 @@ Proposed Usage (Conceptual)
   # 2. Run any AI CLI agent inside the secure wrapper
   context-cli track "aider"
 
-💻 Proposed Tech Stack
+Proposed Tech Stack
 
 We are looking for Core JavaScript / TypeScript Node.js developers to lead the technical implementation.
 
