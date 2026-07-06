@@ -25,26 +25,33 @@ The Solution: The Wrapper Approach
 
 The AI lives in a "clean sandbox," believing it talks directly to the user. Meanwhile, our utility acts as a silent proxy, capturing telemetry, updating your local **Obsidian Vault**, and seamlessly injecting highly compressed, lightweight context into the session.
 
-   [User Input: "opencode", etc.]
-               │
-               ▼
- ┌────────────────────────────────────────────────────────┐
- │ 1. Local-Context-CLI Environment (The Wrapper)         │
- │                                                        │
- │  • Reads latest compressed MD user profile from Vault. │
- │  • Spawns an isolated Network Namespace / VPN Tunnel.  │
- └────────────────────────────────────────────────────────┘
-        │
-        ▼
- ┌────────────────────────────────────────────────────────┐
- │ 2. Isolated AI Agent Sandbox (Any CLI Agent)           │
- │                                                        │
- │  • Receives micro-injected context (saves ~95% tokens) │
- │  • Thinks it communicates directly with the user.      │
- └────────────────────────────────────────────────────────┘
-        │
-        ▼
- [Silent Telemetry Parsing] ──> Updates `.md` stats in Obsidian.
+flowchart TD
+    User([User Input: 'opencode', etc.]) --> Wrapper
+
+    subgraph Wrapper [1. Local-Context-CLI Environment - The Wrapper]
+        direction TB
+        A[Reads compressed MD profile from Vault] --> B[Spawns isolated VPN tunnel]
+    end
+
+    Wrapper --> Sandbox
+
+    subgraph Sandbox [2. Isolated AI Agent Sandbox]
+        direction TB
+        C[Receives micro-injected context] --> D[Agent thinks it talks directly to user]
+    end
+
+    Sandbox --> Telemetry[Silent Telemetry Parsing]
+    Telemetry --> Obsidian[(Updates .md stats in Obsidian Vault)]
+
+    %% Styling for better dark mode visibility
+    style Wrapper fill:#1f2937,stroke:#3b82f6,stroke-width:2px,color:#ffffff
+    style Sandbox fill:#1f2937,stroke:#10b981,stroke-width:2px,color:#ffffff
+    style Obsidian fill:#2e1065,stroke:#8b5cf6,stroke-width:2px,color:#ffffff
+    style A fill:#374151,stroke:#4b5563,color:#ffffff
+    style B fill:#374151,stroke:#4b5563,color:#ffffff
+    style C fill:#374151,stroke:#4b5563,color:#ffffff
+    style D fill:#374151,stroke:#4b5563,color:#ffffff
+    style Telemetry fill:#111827,stroke:#374151,color:#ffffff
 
 Key Features
 
