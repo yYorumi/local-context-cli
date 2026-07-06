@@ -43,19 +43,9 @@ flowchart TD
 
     Sandbox --> Telemetry[Silent Telemetry Parsing]
     Telemetry --> Obsidian[(Updates .md stats in Obsidian Vault)]
-
-    %% Styling for better dark mode visibility
-    style Wrapper fill:#1f2937,stroke:#3b82f6,stroke-width:2px,color:#ffffff
-    style Sandbox fill:#1f2937,stroke:#10b981,stroke-width:2px,color:#ffffff
-    style Obsidian fill:#2e1065,stroke:#8b5cf6,stroke-width:2px,color:#ffffff
-    style A fill:#374151,stroke:#4b5563,color:#ffffff
-    style B fill:#374151,stroke:#4b5563,color:#ffffff
-    style C fill:#374151,stroke:#4b5563,color:#ffffff
-    style D fill:#374151,stroke:#4b5563,color:#ffffff
-    style Telemetry fill:#111827,stroke:#374151,color:#ffffff
-
-Key Features
 ```
+Key Features
+
   Token-Saving Context Injection: Automatically injects small, structural user preferences (e.g., "Prefers TypeScript, hates verbose comments") derived from Obsidian data, saving thousands of tokens.
 
   Isolated VPN Wrapper / Kill Switch: Supply your own .conf or .ovpn file. The utility creates an isolated network tunnel strictly for the AI agent process. Your main OS internet remains untouched,
