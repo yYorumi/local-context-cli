@@ -27,7 +27,7 @@ The AI lives in a "clean sandbox," believing it talks directly to the user. Mean
 
 ```mermaid
 flowchart TD
-    User([User Input: 'opencode']) --> Wrapper
+    User([User Input: 'opencode', etc.]) --> Wrapper
 
     subgraph Wrapper [1. Local-Context-CLI Environment - The Wrapper]
         direction TB
