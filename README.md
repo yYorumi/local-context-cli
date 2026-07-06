@@ -26,6 +26,7 @@ The Solution: The Wrapper Approach
 The AI lives in a "clean sandbox," believing it talks directly to the user. Meanwhile, our utility acts as a silent proxy, capturing telemetry, updating your local **Obsidian Vault**, and seamlessly injecting highly compressed, lightweight context into the session.
 
 flowchart TD
+```mermaid
     User([User Input: 'opencode', etc.]) --> Wrapper
 
     subgraph Wrapper [1. Local-Context-CLI Environment - The Wrapper]
@@ -52,6 +53,7 @@ flowchart TD
     style C fill:#374151,stroke:#4b5563,color:#ffffff
     style D fill:#374151,stroke:#4b5563,color:#ffffff
     style Telemetry fill:#111827,stroke:#374151,color:#ffffff
+```
 
 Key Features
 
