@@ -55,7 +55,7 @@ flowchart TD
     style Telemetry fill:#111827,stroke:#374151,color:#ffffff
 
 Key Features
-
+```
   Token-Saving Context Injection: Automatically injects small, structural user preferences (e.g., "Prefers TypeScript, hates verbose comments") derived from Obsidian data, saving thousands of tokens.
 
   Isolated VPN Wrapper / Kill Switch: Supply your own .conf or .ovpn file. The utility creates an isolated network tunnel strictly for the AI agent process. Your main OS internet remains untouched,
